@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report an Issue | FixMyCampus</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #172033;
+        }
+        
+        header {
+            background: #14213d;
+            color: white;
+            padding: 22px 8%;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        main {
+            max-width: 700px;
+            margin: 35px auto;
+            padding: 0 18px;
+        }
+
+        .form-card {
+            background: white;
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 8px 25px #14213d12;
+            padding:65px 10%;
+            color:white;
+            background:linear-gradient(90deg,#14213de8,#14213d55),
+            url('images/mainteinance.jpg')center/cover;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin: 18px 0 8px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 7px;
+            font-size: 15px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        button {
+            margin-top: 22px;
+            padding: 13px 22px;
+            background: #087f8c;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #066873;
+        }
+
+        .note {
+            color: #64748b;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>FixMyCampus</h1>
+        <p>Report a Campus Issue</p>
+    </header>
+
+    <main>
+        <section class="form-card">
+            <h2>Submit a New Issue</h2>
+            <p class="note">Help us make the campus safer and better.</p>
+
+            <form id="issueForm" action="report-issue" method="post">
+                <label for="title">Issue Title</label>
+                <input type="text" id="title" name="title"
+                       placeholder="e.g. Broken classroom fan" required>
+
+                <label for="category">Issue Category</label>
+                <select id="category" name="category" required>
+                    <option value="">Select a category</option>
+                    <option value="Electrical">Electrical</option>
+                    <option value="Water">Water Leakage</option>
+                    <option value="Cleanliness">Cleanliness</option>
+                    <option value="Infrastructure">Infrastructure</option>
+                    <option value="WiFi">Wi-Fi / Internet</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="location">Campus Location</label>
+                <input type="text" id="location" name="location"
+                       placeholder="e.g. Block A, Room 204" required>
+
+                <label for="severity">Severity</label>
+                <select id="severity" name="severity" required>
+                    <option value="">Select severity</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                    <option value="Critical">Critical</option>
+                </select>
+
+                <label for="description">Issue Description</label>
+                <textarea id="description" name="description"
+                          placeholder="Describe the problem..." required></textarea>
+
+                <button type="submit">Submit Issue</button>
+               
+            </form>
+
+            <div id="result" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById("issueForm").addEventListener("submit", function(event) {
+            const form = event.currentTarget;
+
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                form.reportValidity();
+            }
+        });
+           
+
+</script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FixMyCampus</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial;background:#f2f7fb;color:#14213d}
+nav{padding:20px 8%;background:#14213d;color:white;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+nav b{font-size:24px}nav span{color:#20d5c7}
+nav a{color:white;text-decoration:none;margin:6px}
+.hero{padding:65px 10%;color:white;background:linear-gradient(90deg,#14213de8,#14213d55),url('images/campus.jpg') center/cover}
+h1{font-size:42px;margin:12px 0}h1 span{color:#20d5c7}
+p{line-height:1.6}
+.btn{display:inline-block;background:#08aa9e;color:white;padding:12px 18px;border-radius:25px;text-decoration:none;margin:8px 5px 0 0}
+main{padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+section{background:white;border-radius:12px;overflow:hidden}
+.maintenance{height:180px;background:url('images/mainteinance.jpg') center/cover,#c9f0eb}
+.content{padding:20px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:15px}
+.card{padding:18px 10px;text-align:center;border-radius:12px;background:#ddf7f5}
+.card:nth-child(2){background:#e4efff}
+.card:nth-child(3){background:#e1f7f0}
+.card h3{font-size:16px}
+footer{text-align:center;padding:18px;color:#64748b}
+@media(max-width:700px){main{grid-template-columns:1fr}.hero{padding:45px 7%}.cards{grid-template-columns:1fr}h1{font-size:34px}}
+</style>
+</head>
+<body>
+<nav>
+<b>FixMy<span>Campus</span></b>
+<div>
+<a href="index.html">Home</a>
+<a href="report-issue.html">Report Issue</a>
+<a href="view-complaints">Complaints</a>
+</div>
+</nav>
+
+<header class="hero">
+<p>SMART CAMPUS INFRASTRUCTURE</p>
+<h1>Report it.<br><span>Track it.</span> Fix it.</h1>
+<p>Report campus problems and help create a safer,<br>
+cleaner and smarter campus.</p>
+<a class="btn" href="report-issue.html">+ Report Issue</a>
+<a class="btn" href="view-complaints">View Complaints</a>
+</header>
+
+<main>
+<section>
+<div class="maintenance">
+    <img src="images/maintenance.jpg" alt="Campus Maintenance">
+</div>
+<div class="content">
+<h2>🔧 Report Issue</h2>
+<p>Report campus maintenance problems with their location and severity.</p>
+<a class="btn" href="report-issue.html">Open Form →</a>
+</div>
+</section>
+
+<section>
+<div class="content"><h2>Our Key Features</h2></div>
+<div class="cards">
+<div class="card"><h3>📝 Report Issues</h3><p>Submit campus problems.</p></div>
+<div class="card"><h3>🔎 View Complaints</h3><p>Check complaint status.</p></div>
+<div class="card"><h3>⚙️ Smart Priority</h3><p>Highlight urgent issues.</p></div>
+</div>
+</section>
+</main>
+<footer>FixMyCampus | Java Web Mini Project</footer>
+</body>
+</html>
